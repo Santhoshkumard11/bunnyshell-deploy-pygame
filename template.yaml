@@ -1,0 +1,11 @@
+name: Pygame on web
+description: Run any of your games created with Pygame on web and test it
+tags: [ python, pygame, pygbag ]
+icons: [ python, pygame ]
+stack:
+  packages:
+    - name: Python
+      version: '3.8.13'
+    - name: Pygame
+      version: '2.3.0'
+discoverable: true
