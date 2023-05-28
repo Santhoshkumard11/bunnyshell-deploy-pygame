@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  backend:
+    container_name: pygame-on-web
+    build:
+      context: ./../
+      dockerfile: .docker/Dockerfile
+    environment:
+      - ALLOWED_ORIGIN=${FRONTEND_URL:-http://localhost}
+    ports:
+      - "8000:8000"
