@@ -1,0 +1,24 @@
+kind: Environment
+name: Pygame on web
+type: primary
+components:
+    -
+        kind: Application
+        name: web
+        gitRepo: 'https://github.com/Santhoshkumard11/bunnyshell-deploy-pygame.git'
+        gitBranch: main
+        gitApplicationPath: space_invaders
+        dockerCompose:
+            build:
+                context: ./space_invaders
+                dockerfile: .docker/Dockerfile
+            environment:
+                ALLOWED_ORIGIN: 'https://{{ components.frontend.ingress.hosts[0] }}'
+                DEBUG: 'True'
+            ports:
+                - '8000:8000'
+        hosts:
+            -
+                hostname: 'frontend-{{ env.base_domain }}'
+                path: /
+                servicePort: 8000
