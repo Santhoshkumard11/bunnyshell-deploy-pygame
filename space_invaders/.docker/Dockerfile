@@ -3,6 +3,10 @@ FROM python:3.8-buster
 # install os system level packages
 RUN apt-get -y update && apt install -y ffmpeg
 
+
+USER 0
+RUN mkdir /.cache && chmod 777 /.cache
+
 # Copy source and install dependencies
 RUN mkdir -p /opt/sandy_inspires/space_invaders/
 
