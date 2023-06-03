@@ -12,13 +12,10 @@ components:
             build:
                 context: ./space_invaders
                 dockerfile: .docker/Dockerfile
-            environment:
-                ALLOWED_ORIGIN: 'https://{{ components.frontend.ingress.hosts[0] }}'
-                DEBUG: 'True'
             ports:
-                - '8000:8000'
+                - '80:80'
         hosts:
             -
                 hostname: 'frontend-{{ env.base_domain }}'
                 path: /
-                servicePort: 8000
+                servicePort: 80
