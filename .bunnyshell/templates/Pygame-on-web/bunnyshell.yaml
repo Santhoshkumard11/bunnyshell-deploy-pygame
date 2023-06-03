@@ -4,7 +4,7 @@ type: primary
 components:
     -
         kind: Application
-        name: web
+        name: pygame
         gitRepo: 'https://github.com/Santhoshkumard11/bunnyshell-deploy-pygame.git'
         gitBranch: main
         gitApplicationPath: space_invaders
@@ -13,9 +13,9 @@ components:
                 context: ./space_invaders
                 dockerfile: .docker/Dockerfile
             ports:
-                - '80:80'
+                - '8000:8000'
         hosts:
             -
-                hostname: 'frontend-{{ env.base_domain }}'
+                hostname: 'space-invaders-{{ env.base_domain }}'
                 path: /
-                servicePort: 80
+                servicePort: 8000
