@@ -30,15 +30,13 @@ RUN pygbag --build --title "Sandy Inspires - Space Invaders" --app_name "Sandy I
 
 RUN mkdir -p /usr/share/nginx/html
 
-RUN cp -r /opt/sandy_inspires/space_invaders/build/web/* /usr/share/nginx/html
+RUN cp -r /opt/sandy_inspires/space_invaders/build/web/* /usr/share/nginx/html/
 
 FROM nginx:1.21.3-alpine
 
 COPY .docker/files/nginx.conf /etc/nginx/nginx.conf
 COPY .docker/files/entrypoint.sh  /usr/share/entrypoint.sh
 RUN chmod +x /usr/share/entrypoint.sh
-
-ENTRYPOINT ["/usr/share/entrypoint.sh"]
 
 EXPOSE 80
 
