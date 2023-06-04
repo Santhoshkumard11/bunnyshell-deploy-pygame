@@ -25,7 +25,5 @@ WORKDIR /opt/sandy_inspires/space_invaders/
 # Expose the application port
 EXPOSE 8000
 
-#ENTRYPOINT ["/opt/sandy_inspires/space_invaders/entrypoint.sh"]
-
 # Start the application - might have to do some load test
 CMD pygbag --bind 0.0.0.0 --title "Sandy Inspires - Space Invaders" --app_name "Sandy Inspires - Space Invaders" /opt/sandy_inspires/space_invaders
