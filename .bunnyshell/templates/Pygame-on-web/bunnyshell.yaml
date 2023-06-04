@@ -13,9 +13,9 @@ components:
                 context: ./space_invaders
                 dockerfile: .docker/Dockerfile
             ports:
-                - '8000:8000'
+                - '80:80'
         hosts:
             -
                 hostname: 'space-invaders-{{ env.base_domain }}'
                 path: /
-                servicePort: 8000
+                servicePort: 80
