@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  backend:
+  pygame:
     container_name: pygame-on-web
     build:
       context: ./../
