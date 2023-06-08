@@ -1,4 +1,4 @@
-FROM python:3.8-buster as build
+FROM python:3.11-buster as build
 
 # install os system level packages
 RUN apt-get -y update && apt install -y ffmpeg
@@ -23,7 +23,7 @@ COPY . /opt/sandy_inspires/space_invaders
 WORKDIR /opt/sandy_inspires/space_invaders/
 
 # build the application - might have to do some load test
-RUN pygbag --build --title "Sandy Inspires - Space Invaders" --app_name "Sandy Inspires - Space Invaders" /opt/sandy_inspires/space_invaders
+RUN pygbag --build --ume_block 0 --title "Sandy Inspires - Space Invaders" --app_name "Sandy Inspires - Space Invaders" /opt/sandy_inspires/space_invaders
 
 FROM nginx:1.21.3-alpine as prod
 
