@@ -22,9 +22,6 @@ RUN pip install --trusted-host pypi.python.org --trusted-host pypi.org --no-cach
 COPY . /opt/sandy_inspires/space_invaders
 WORKDIR /opt/sandy_inspires/space_invaders/
 
-# Expose the application port
-EXPOSE 8000
-
 # build the application - might have to do some load test
 RUN pygbag --build --title "Sandy Inspires - Space Invaders" --app_name "Sandy Inspires - Space Invaders" /opt/sandy_inspires/space_invaders
 
