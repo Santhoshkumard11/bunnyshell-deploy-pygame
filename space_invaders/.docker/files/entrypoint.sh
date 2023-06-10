@@ -1,5 +1,5 @@
 #!/bin/sh
 
-echo "Running custom entrypoint."
+echo "Running custom entrypoint. - args - $@"
 
 exec "$@"
