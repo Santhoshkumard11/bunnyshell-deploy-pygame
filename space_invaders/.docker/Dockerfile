@@ -25,9 +25,6 @@ WORKDIR /opt/sandy_inspires/space_invaders/
 # build the application - might have to do some load test
 RUN pygbag --build --ume_block 0 --title "Sandy Inspires - Space Invaders" --app_name "Sandy Inspires - Space Invaders" /opt/sandy_inspires/space_invaders
 
-RUN nohup pygbag --ume_block 0 --title "Sandy Inspires - Space Invaders" --app_name "Sandy Inspires - Space Invaders" /opt/sandy_inspires/space_invaders &
-EXPOSE 8000
-
 
 FROM nginx:1.21.3-alpine as prod
 
