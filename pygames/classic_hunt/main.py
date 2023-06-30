@@ -1,10 +1,13 @@
-import os, sys
+import game.driver
+import asyncio
+import os
+import sys
 import pygame
 import pygame.transform
 from game.registry import adjpos, adjrect, adjwidth, adjheight
 
 # Game parameters
-SCREEN_WIDTH, SCREEN_HEIGHT = adjpos (800, 500)
+SCREEN_WIDTH, SCREEN_HEIGHT = adjpos(800, 500)
 TITLE = "Classic Hunt"
 FRAMES_PER_SEC = 50
 BG_COLOR = 255, 255, 255
@@ -15,7 +18,6 @@ pygame.init()
 pygame.display.set_caption(TITLE)
 pygame.mouse.set_visible(False)
 
-import game.driver
 
 class Game(object):
     def __init__(self):
@@ -25,7 +27,7 @@ class Game(object):
         self.size = SCREEN_WIDTH, SCREEN_HEIGHT
         background = os.path.join('media', 'background.jpg')
         bg = pygame.image.load(background)
-        self.background = pygame.transform.smoothscale (bg, self.size)
+        self.background = pygame.transform.smoothscale(bg, self.size)
         self.driver = None
 
     def init(self):
@@ -43,7 +45,7 @@ class Game(object):
         self.driver.update()
 
     def render(self):
-        self.surface.blit(self.background, (0,0))
+        self.surface.blit(self.background, (0, 0))
         self.driver.render()
         pygame.display.flip()
 
@@ -51,7 +53,7 @@ class Game(object):
         pygame.quit()
         sys.exit(0)
 
-    def execute(self):
+    async def execute(self):
         self.init()
 
         while (self.running):
@@ -59,9 +61,11 @@ class Game(object):
                 self.handleEvent(event)
             self.loop()
             self.render()
+            await asyncio.sleep(0)
 
         self.cleanup()
 
+
 if __name__ == "__main__":
     theGame = Game()
-    theGame.execute()
+    asyncio.run(theGame.execute())
