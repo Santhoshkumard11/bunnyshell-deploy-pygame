@@ -28,3 +28,5 @@ Deploy any of your pygames code with Bunnyshell environments
 Note: Assuming you've the game in a separate folder
 
 `python3 -m pygbag space_invaders/`
+
+1889:e97f2e6c5584f070fb6548924a525874

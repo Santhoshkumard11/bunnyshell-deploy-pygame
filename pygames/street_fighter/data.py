@@ -10,7 +10,7 @@ DARK_GREEN = (0, 150, 0)
 WHITE = (255, 255, 255)
 
 # define game variables
-GAME_NAME = "RazeXFighter"
+GAME_NAME = "Street Fighter"
 MENU = True
 PAUSE_MENU = False
 END_MENU = False
