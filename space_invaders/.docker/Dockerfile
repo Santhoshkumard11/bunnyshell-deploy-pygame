@@ -30,10 +30,14 @@ FROM nginx:alpine3.17 as prod
 
 RUN mkdir -p /usr/share/nginx/html
 
+# copy the file built from the build env
 COPY --from=build /opt/sandy_inspires/space_invaders/build/web/* /usr/share/nginx/html
 
+# copy nginx config and entrypoint files
 COPY .docker/files/nginx.conf /etc/nginx/nginx.conf
 COPY .docker/files/entrypoint.sh  /usr/share/entrypoint.sh
+COPY .docker/files/mime.types /etc/nginx/mime.types
+# make the entrypoint script executable
 RUN chmod +x /usr/share/entrypoint.sh
 
 WORKDIR /usr/share/nginx/html
