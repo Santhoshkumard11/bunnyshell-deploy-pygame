@@ -26,10 +26,10 @@ COPY street_fighter/* /opt/sandy_inspires/game/street_fighter/
 WORKDIR /opt/sandy_inspires/game/space_invaders/
 
 # build the application - might have to do some load test
-RUN pygbag --build --ume_block 0 --title "Sandy Inspires - Space Invaders" --app_name "Sandy Inspires - Space Invaders" /opt/sandy_inspires/game/space_invaders
-RUN pygbag --build --ume_block 0 --title "Sandy Inspires - Flappy Bird" --app_name "Sandy Inspires - Flappy Bird" /opt/sandy_inspires/game/flappy_bird
-RUN pygbag --build --ume_block 0 --title "Sandy Inspires - Classic Hunt" --app_name "Sandy Inspires - Classic Hunt" /opt/sandy_inspires/game/classic_hunt
-RUN pygbag --build --ume_block 0 --title "Sandy Inspires - Street Figher" --app_name "Sandy Inspires - Street Figher" /opt/sandy_inspires/game/street_fighter
+RUN pygbag --build --title "Sandy Inspires - Space Invaders" --app_name "Sandy Inspires - Space Invaders" /opt/sandy_inspires/game/space_invaders
+RUN pygbag --build --title "Sandy Inspires - Flappy Bird" --app_name "Sandy Inspires - Flappy Bird" /opt/sandy_inspires/game/flappy_bird
+RUN pygbag --build --title "Sandy Inspires - Classic Hunt" --app_name "Sandy Inspires - Classic Hunt" /opt/sandy_inspires/game/classic_hunt
+RUN pygbag --build --title "Sandy Inspires - Street Figher" --app_name "Sandy Inspires - Street Figher" /opt/sandy_inspires/game/street_fighter
 
 
 FROM nginx:alpine3.17 as prod
