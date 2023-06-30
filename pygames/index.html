@@ -1,0 +1,185 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bunnyshell - Sandy Inspires - Pygame on Web</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/9e7e33d92a.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        padding-top: 100px;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
+
+    <!-- Added for toast message -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body style="background-color: #c4d7ec">
+    <div id="app">
+      <nav
+        class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"
+        style="background-color: #cdf5f4 !important"
+      >
+        <div class="container">
+          <img
+            src="https://environments.bunnyshell.com/static/media/bunnyshell-logo_short_blue.a59aa205.svg"
+            alt="Bunneyshell"
+            style="height: 50"
+          />
+          <span class="navbar-brand text-black-50"
+            >Pygames on Web - Sandy Inspires</span
+          >
+          <span class="navbar-brand text-black-50"
+            >Let's make life more fun</span
+          >
+        </div>
+      </nav>
+
+      <div class="container">
+        <h2>List of games available</h2>
+        (click on the game name to play)
+      </div>
+
+      <div class="container bg-light mt-4 mb-4">
+        <h4 class="m-md-4">
+          <a
+            href="https://pygames-sandyinspires.bunnyenv.com/game/space-invaders"
+            target="_blank"
+          >
+            1. Space Invaders
+          </a>
+          - classic shooter with 90% matching game play and asthetics
+        </h4>
+
+        <h4 class="m-md-4">
+          <a
+            href="https://pygames-sandyinspires.bunnyenv.com/game/flappy-bird"
+            target="_blank"
+            >2. Flappy Bird
+          </a>
+          - relax your mind once in a while
+        </h4>
+        <h4 class="m-md-4">
+          <a
+            href="https://pygames-sandyinspires.bunnyenv.com/game/classic-hunt"
+            target="_blank"
+            >3. Classic Hunt</a
+          >
+          - Pure Nostalgic, control aim with mouse instead of the gun
+        </h4>
+      </div>
+    </div>
+
+    <footer
+      class="bg-light text-center"
+      style="
+        position: fixed;
+        bottom: 0;
+        height: 250px;
+        width: 100%;
+        line-height: 60px;
+      "
+    >
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <h2>If you want to connect</h2>
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Linkedin -->
+          <a
+            class="m-2"
+            style="color: #0082ca; !important font-size:250%"
+            href="https://www.linkedin.com/in/santhosh-kumard"
+            target="_blank"
+            role="button"
+          >
+            <i
+              class="fa fa-linkedin-square"
+              aria-hidden="true"
+              style="font-size: 250%"
+            ></i>
+          </a>
+          <!-- Github -->
+          <a
+            class="m-2"
+            style="color: #333333; !important font-size:250%"
+            href="https://github.com/Santhoshkumard11/fresh-water-classifier"
+            target="_blank"
+            role="button"
+            ><i
+              class="fa fa-github-square"
+              aria-hidden="true"
+              style="font-size: 250%"
+            ></i>
+          </a>
+
+          <!-- Medium -->
+          <a
+            class="m-2"
+            style="color: #3b5998; !important"
+            href="https://santhoshkdhana.medium.com/"
+            target="_blank"
+            role="button"
+            ><i
+              class="fa fa-medium"
+              aria-hidden="true"
+              style="font-size: 250%"
+            ></i
+          ></a>
+
+          <!-- Twitter -->
+          <a
+            class="m-2"
+            style="color: #55acee; !important"
+            href="https://twitter.com/sandy_inspires"
+            target="_blank"
+            role="button"
+            ><i class="fa fa-twitter-square" style="font-size: 250%"></i
+          ></a>
+
+          <!-- Instagram -->
+          <a
+            class="m-2"
+            style="color: #ac2bac; !important"
+            href="https://www.instagram.com/sandy_inspires"
+            target="_blank"
+            role="button"
+            ><i class="fa fa-instagram" style="font-size: 250%"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="" style="background-color: #c0d7ee">
+        <span class="text-dark"> © 2023 Copyright </span>
+        <a class="text-dark" href="https://github.com/Santhoshkumard11"
+          >Sandy Inspires</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>

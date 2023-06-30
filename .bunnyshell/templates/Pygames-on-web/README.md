@@ -21,10 +21,10 @@ Deploy any of your pygames code with Bunnyshell environments
 
 ### Run the game
 
-`python3 main.py`
+`python3 pygames/space_invaders/main.py`
 
 ### Web - runs on port localhost:8000
 
 Note: Assuming you've the game in a separate folder
 
-`python3 -m pygbag space_invaders/`
+`python3 -m pygbag pygames/space_invaders/`

@@ -1,21 +1,21 @@
 kind: Environment
-name: Pygame on web
+name: Pygames on web
 type: primary
 components:
     -
         kind: Application
-        name: pygame
+        name: pygames
         gitRepo: 'https://github.com/Santhoshkumard11/bunnyshell-deploy-pygame.git'
         gitBranch: main
-        gitApplicationPath: space_invaders
+        gitApplicationPath: pygames
         dockerCompose:
             build:
-                context: ./space_invaders
+                context: ./pygames
                 dockerfile: .docker/Dockerfile
             ports:
                 - '80:80'
         hosts:
             -
-                hostname: 'space-invaders-{{ env.base_domain }}'
+                hostname: 'pygames-{{ env.base_domain }}'
                 path: /
                 servicePort: 80
