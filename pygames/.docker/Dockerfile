@@ -20,7 +20,9 @@ COPY space_invaders/requirements.txt /opt/sandy_inspires/game/space_invaders/
 RUN pip install --trusted-host pypi.python.org --trusted-host pypi.org --no-cache-dir -r /opt/sandy_inspires/game/space_invaders/requirements.txt
 
 # copy all the other file
-COPY space_invaders/* /opt/sandy_inspires/game/space_invaders/ flappy_bird/* /opt/sandy_inspires/game/flappy_bird/ classic_hunt/* /opt/sandy_inspires/game/classic_hunt/
+COPY space_invaders/* /opt/sandy_inspires/game/space_invaders/ 
+COPY flappy_bird/* /opt/sandy_inspires/game/flappy_bird/ 
+COPY classic_hunt/* /opt/sandy_inspires/game/classic_hunt/
 
 WORKDIR /opt/sandy_inspires/game/space_invaders/
 
@@ -44,7 +46,9 @@ COPY --from=pygame_build /opt/sandy_inspires/game/flappy_bird/build/web/* /usr/s
 COPY --from=pygame_build /opt/sandy_inspires/game/classic_hunt/build/web/* /usr/share/nginx/html/game/classic-hunt
 
 # copy nginx config and entrypoint files
-COPY .docker/files/nginx.conf /etc/nginx/nginx.conf .docker/files/entrypoint.sh  /usr/share/entrypoint.sh .docker/files/mime.types /etc/nginx/mime.types
+COPY .docker/files/nginx.conf /etc/nginx/nginx.conf 
+COPY .docker/files/mime.types /etc/nginx/mime.types
+COPY .docker/files/entrypoint.sh  /usr/share/entrypoint.sh 
 
 # make the entrypoint script executable
 RUN chmod +x /usr/share/entrypoint.sh

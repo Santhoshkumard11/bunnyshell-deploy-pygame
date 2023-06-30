@@ -17,6 +17,39 @@ PLAYER = './gallery/sprites/bird.png'
 BACKGROUND = './gallery/sprites/background.png'
 PIPE = './gallery/sprites/pipe.png'
 
+# This will be the main point from./gallery/sprites/ where our game will start
+pygame.init()  # Initialize all pygame's modules
+FPSCLOCK = pygame.time.Clock()
+pygame.display.set_caption('Flappy Bird')
+GAME_SPRITES['numbers'] = (
+    pygame.image.load('./gallery/sprites/0.png').convert_alpha(),
+    pygame.image.load('./gallery/sprites/1.png').convert_alpha(),
+    pygame.image.load('./gallery/sprites/2.png').convert_alpha(),
+    pygame.image.load('./gallery/sprites/3.png').convert_alpha(),
+    pygame.image.load('./gallery/sprites/4.png').convert_alpha(),
+    pygame.image.load('./gallery/sprites/5.png').convert_alpha(),
+    pygame.image.load('./gallery/sprites/6.png').convert_alpha(),
+    pygame.image.load('./gallery/sprites/7.png').convert_alpha(),
+    pygame.image.load('./gallery/sprites/8.png').convert_alpha(),
+    pygame.image.load('./gallery/sprites/9.png').convert_alpha(),
+)
+
+GAME_SPRITES['message'] = pygame.image.load('./gallery/sprites/message.png').convert_alpha()
+GAME_SPRITES['base'] = pygame.image.load('./gallery/sprites/base.png').convert_alpha()
+GAME_SPRITES['pipe'] = (pygame.transform.rotate(pygame.image.load(PIPE).convert_alpha(), 180),
+                        pygame.image.load(PIPE).convert_alpha()
+                        )
+
+# Game sounds
+GAME_SOUNDS['die'] = pygame.mixer.Sound('./gallery/audio/die.ogg')
+GAME_SOUNDS['hit'] = pygame.mixer.Sound('./gallery/audio/hit.ogg')
+GAME_SOUNDS['point'] = pygame.mixer.Sound('./gallery/audio/point.ogg')
+GAME_SOUNDS['swoosh'] = pygame.mixer.Sound('./gallery/audio/swoosh.ogg')
+GAME_SOUNDS['wing'] = pygame.mixer.Sound('./gallery/audio/wing.ogg')
+
+GAME_SPRITES['background'] = pygame.image.load(BACKGROUND).convert()
+GAME_SPRITES['player'] = pygame.image.load(PLAYER).convert_alpha()
+
 
 def welcomeScreen():
     """
@@ -184,39 +217,6 @@ def getRandomPipe():
 
 
 async def main():
-    # This will be the main point from./gallery/sprites/ where our game will start
-    pygame.init()  # Initialize all pygame's modules
-    FPSCLOCK = pygame.time.Clock()
-    pygame.display.set_caption('Flappy Bird')
-    GAME_SPRITES['numbers'] = (
-        pygame.image.load('./gallery/sprites/0.png').convert_alpha(),
-        pygame.image.load('./gallery/sprites/1.png').convert_alpha(),
-        pygame.image.load('./gallery/sprites/2.png').convert_alpha(),
-        pygame.image.load('./gallery/sprites/3.png').convert_alpha(),
-        pygame.image.load('./gallery/sprites/4.png').convert_alpha(),
-        pygame.image.load('./gallery/sprites/5.png').convert_alpha(),
-        pygame.image.load('./gallery/sprites/6.png').convert_alpha(),
-        pygame.image.load('./gallery/sprites/7.png').convert_alpha(),
-        pygame.image.load('./gallery/sprites/8.png').convert_alpha(),
-        pygame.image.load('./gallery/sprites/9.png').convert_alpha(),
-    )
-
-    GAME_SPRITES['message'] = pygame.image.load('./gallery/sprites/message.png').convert_alpha()
-    GAME_SPRITES['base'] = pygame.image.load('./gallery/sprites/base.png').convert_alpha()
-    GAME_SPRITES['pipe'] = (pygame.transform.rotate(pygame.image.load(PIPE).convert_alpha(), 180),
-                            pygame.image.load(PIPE).convert_alpha()
-                            )
-
-    # Game sounds
-    GAME_SOUNDS['die'] = pygame.mixer.Sound('./gallery/audio/die.wav')
-    GAME_SOUNDS['hit'] = pygame.mixer.Sound('./gallery/audio/hit.wav')
-    GAME_SOUNDS['point'] = pygame.mixer.Sound('./gallery/audio/point.wav')
-    GAME_SOUNDS['swoosh'] = pygame.mixer.Sound('./gallery/audio/swoosh.wav')
-    GAME_SOUNDS['wing'] = pygame.mixer.Sound('./gallery/audio/wing.wav')
-
-    GAME_SPRITES['background'] = pygame.image.load(BACKGROUND).convert()
-    GAME_SPRITES['player'] = pygame.image.load(PLAYER).convert_alpha()
-
     while True:
         welcomeScreen()  # Shows welcome screen to the user until he presses a button
         mainGame()  # This is the main game function
