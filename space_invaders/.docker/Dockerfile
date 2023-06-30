@@ -26,17 +26,20 @@ WORKDIR /opt/sandy_inspires/space_invaders/
 RUN pygbag --build --ume_block 0 --title "Sandy Inspires - Space Invaders" --app_name "Sandy Inspires - Space Invaders" /opt/sandy_inspires/space_invaders
 
 
-FROM nginx:1.21.3-alpine as prod
+FROM nginx:alpine3.17 as prod
 
 RUN mkdir -p /usr/share/nginx/html
 
-COPY --from=build /opt/sandy_inspires/space_invaders/build/web/* /usr/share/nginx/html/
+COPY --from=build /opt/sandy_inspires/space_invaders/build/web/* /usr/share/nginx/html
 
 COPY .docker/files/nginx.conf /etc/nginx/nginx.conf
 COPY .docker/files/entrypoint.sh  /usr/share/entrypoint.sh
+RUN chmod +x /usr/share/entrypoint.sh
 
-EXPOSE 80
+WORKDIR /usr/share/nginx/html
 
 ENTRYPOINT ["/usr/share/entrypoint.sh"]
+
+EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
