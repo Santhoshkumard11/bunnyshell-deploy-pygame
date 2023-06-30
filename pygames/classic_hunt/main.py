@@ -5,7 +5,7 @@ from game.registry import adjpos, adjrect, adjwidth, adjheight
 
 # Game parameters
 SCREEN_WIDTH, SCREEN_HEIGHT = adjpos (800, 500)
-TITLE = "classic hunt shoot"
+TITLE = "Classic Hunt"
 FRAMES_PER_SEC = 50
 BG_COLOR = 255, 255, 255
 

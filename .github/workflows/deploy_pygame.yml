@@ -18,11 +18,11 @@ jobs:
             python -m pip install pygbag
             echo "Successfully installed pygbag"
             echo "Attempting to build the game"
-            python -m pygbag --ume_block 0 --title "Sandy Inspires - Space Invaders" --app_name "Sandy Inspires - Space Invaders" --build $GITHUB_WORKSPACE/space_invaders/main.py
+            python -m pygbag --ume_block 0 --title "Sandy Inspires - Space Invaders" --app_name "Sandy Inspires - Space Invaders" --build $GITHUB_WORKSPACE/pygames/space_invaders/main.py
             echo "Successfully build the game and complied to WebAssembly"
 
     - name : "Upload to GitHub pages branch gh-pages"
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
         branch: gh-pages
-        folder: space_invaders/build/web
+        folder: pygames/space_invaders/build/web
