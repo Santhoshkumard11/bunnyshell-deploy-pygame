@@ -1,10 +1,11 @@
 kind: Environment
-name: Pygames on web
+name: Pygames_on_web
 type: primary
+urlHandle: sandyinspires
 components:
     -
         kind: Application
-        name: pygames
+        name: prod
         gitRepo: 'https://github.com/Santhoshkumard11/bunnyshell-deploy-pygame.git'
         gitBranch: main
         gitApplicationPath: pygames
@@ -16,6 +17,40 @@ components:
                 - '80:80'
         hosts:
             -
-                hostname: 'pygames-{{ env.base_domain }}'
+                hostname: 'prod-pygame-{{ env.base_domain }}'
+                path: /
+                servicePort: 80
+    -
+        kind: Application
+        name: stg
+        gitRepo: 'https://github.com/Santhoshkumard11/bunnyshell-deploy-pygame.git'
+        gitBranch: stg
+        gitApplicationPath: pygames
+        dockerCompose:
+            build:
+                context: ./pygames
+                dockerfile: .docker/Dockerfile
+            ports:
+                - '80:80'
+        hosts:
+            -
+                hostname: 'stg-pygame-{{ env.base_domain }}'
+                path: /
+                servicePort: 80
+    -
+        kind: Application
+        name: dev
+        gitRepo: 'https://github.com/Santhoshkumard11/bunnyshell-deploy-pygame.git'
+        gitBranch: dev
+        gitApplicationPath: pygames
+        dockerCompose:
+            build:
+                context: ./pygames
+                dockerfile: .docker/Dockerfile
+            ports:
+                - '80:80'
+        hosts:
+            -
+                hostname: 'dev-pygame-{{ env.base_domain }}'
                 path: /
                 servicePort: 80
