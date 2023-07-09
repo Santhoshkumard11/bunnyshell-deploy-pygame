@@ -1,5 +1,5 @@
 name: Pygames on web
-description: Run any of your games created with Pygame on web and test it
+description: Use this environment template to code, test, and deploy Pygames - get started with building your Pygame in minutes
 tags: [ python, pygame, pygbag ]
 icons: [ python, pygame ]
 stack:
@@ -8,4 +8,6 @@ stack:
       version: '3.8.13'
     - name: Pygame
       version: '2.3.0'
+    - name: Pygbag
+      version: '0.7.1'
 discoverable: true

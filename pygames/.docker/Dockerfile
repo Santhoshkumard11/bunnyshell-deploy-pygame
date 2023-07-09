@@ -6,7 +6,7 @@ RUN apt-get -y update && apt install -y ffmpeg
 USER 0
 RUN mkdir /.cache && chmod 777 /.cache
 
-# Copy source and install dependencies
+# make game directories
 RUN mkdir -p /opt/sandy_inspires/game/space_invaders/ /opt/sandy_inspires/game/flappy_bird/ /opt/sandy_inspires/game/classic_hunt/ /opt/sandy_inspires/game/street_fighter/
 
 # upgrade pip
@@ -14,16 +14,16 @@ RUN pip install --upgrade pip
 
 COPY space_invaders/requirements.txt /opt/sandy_inspires/game/space_invaders/
 
-# Install the application dependencies
+# install the game dependencies
 RUN pip install --trusted-host pypi.python.org --trusted-host pypi.org --no-cache-dir -r /opt/sandy_inspires/game/space_invaders/requirements.txt
 
-# copy all the other file
+# copy all the game folders
 COPY space_invaders /opt/sandy_inspires/game/space_invaders
 COPY flappy_bird /opt/sandy_inspires/game/flappy_bird
 COPY classic_hunt /opt/sandy_inspires/game/classic_hunt
 COPY street_fighter /opt/sandy_inspires/game/street_fighter
 
-# build the application - might have to do some load test
+# build the games - might have to do some load test
 RUN pygbag --build --ume_block 0 --title "Sandy Inspires - Space Invaders" --app_name "Sandy Inspires - Space Invaders" /opt/sandy_inspires/game/space_invaders/main.py
 RUN pygbag --build --ume_block 0 --title "Sandy Inspires - Flappy Bird" --app_name "Sandy Inspires - Flappy Bird" /opt/sandy_inspires/game/flappy_bird/main.py
 RUN pygbag --build --ume_block 0 --title "Sandy Inspires - Classic Hunt" --app_name "Sandy Inspires - Classic Hunt" /opt/sandy_inspires/game/classic_hunt/main.py
