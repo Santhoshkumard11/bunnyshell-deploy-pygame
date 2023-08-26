@@ -18,7 +18,7 @@ jobs:
             python -m pip install pygbag
             echo "Successfully installed pygbag"
             echo "Attempting to build the game"
-            python -m pygbag --ume_block 0 --title "Sandy Inspires - Space Invaders" --app_name "Sandy Inspires - Space Invaders" --build $GITHUB_WORKSPACE/pygames/space_invaders/main.py
+            python -m pygbag --ume_block 0 --title "Sandy Inspires - Duck Hunt" --app_name "Sandy Inspires - Duck Hunt" --build $GITHUB_WORKSPACE/pygames/classic_hunt/main.py
             echo "Successfully build the game and complied to WebAssembly"
 
     - name : "Upload to GitHub pages branch gh-pages"
