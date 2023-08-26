@@ -1,14 +1,14 @@
 <html lang="en-us"><script src="https://pygame-web.github.io/archives/0.7/pythons.js" type=module id="site" data-os="vtx,fs,snd,gui" async defer>#<!--
 
 print("""
-Loading Sandy Inspires - Space Invaders from space_invaders.apk
-    Pygbag Version : 0.7.1
-    Template Version : 0.7.0
+Loading Sandy Inspires - Duck Hunt from classic_hunt.apk
+    Pygbag Version : 0.7.2
+    Template Version : 0.7.3
     Python  : 3.11
     CDN URL : https://pygame-web.github.io/archives/0.7/
     Screen  : {{cookiecutter.width}}x{{cookiecutter.height}}
-    Title   : Sandy Inspires - Space Invaders
-    Folder  : space_invaders
+    Title   : Sandy Inspires - Duck Hunt
+    Folder  : classic_hunt
     Authors : pgw
     SPDX-License-Identifier: cookiecutter.spdx
 
@@ -84,12 +84,12 @@ async def custom_site():
 
 
 
-    apk = "space_invaders.apk"
+    apk = "classic_hunt.apk"
 
-    bundle = "space_invaders"
+    bundle = "classic_hunt"
 
     # the C or js loader could do that but be explicit.
-    appdir = Path(f"/data/data/{bundle}") # /data/data/space_invaders
+    appdir = Path(f"/data/data/{bundle}") # /data/data/classic_hunt
     appdir.mkdir()
 
 
@@ -235,11 +235,11 @@ asyncio.run( custom_site() )
 config = {
     xtermjs : "1" ,
     _sdl2 : "canvas",
-    user_canvas : 1,
+    user_canvas : 0,
     user_canvas_managed : 0,
     ume_block : 0,
     can_close : 0,
-    archive : "space_invaders",
+    archive : "classic_hunt",
     gui_debug : 3,
     cdn : "https://pygame-web.github.io/archives/0.7/",
     autorun : 0,
@@ -248,7 +248,7 @@ config = {
 
 </script>
 
-    <title>Sandy Inspires - Space Invaders</title>
+    <title>Sandy Inspires - Duck Hunt</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
